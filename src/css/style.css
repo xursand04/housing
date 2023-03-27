@@ -1,12 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "react-alice-carousel/lib/alice-carousel.css";
+
+
+.alice-carousel__prev-btn-item, .alice-carousel__next-btn {
+    display: none;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.active{
+    color: deepskyblue !important;
+}
+.property-grid{
+    margin: 50px 0;
+}
+.login{
+    background-image: url('https://as1.ftcdn.net/v2/jpg/00/98/68/38/1000_F_98683889_ZKyCyC5LxwmYMuB2EYLKNU9Y3oh4LLOl.jpg');
+    height: 900px;
+    top: 0;
+}
+.login-box{
+    backdrop-filter: blur(25px);
+}
+.register{
+    background-image: url('https://as1.ftcdn.net/v2/jpg/00/98/68/38/1000_F_98683889_ZKyCyC5LxwmYMuB2EYLKNU9Y3oh4LLOl.jpg');
+    height: 900px;
+    top: 0;
+}
+.register-box{
+    backdrop-filter: blur(25px);
+}
+.burgerMenu{
+    backdrop-filter: blur(15px);
+}
+
 @media only screen and (max-width:1400px) {
     .footer-info4, .choose-info4{
         display: none;
     }
     
 }
+@media only screen and (max-width:1200px) {
+    .grid{
+        flex-direction: column;
+    }
+    .banner{
+        width: 700px;
+        height: 400px;
+    }
+}
+
 @media only screen and (max-width:1000px) {
     .footer-info3, .choose-info3{
         display: none;
+    }
+    .cards{
+        flex-direction: column;
+        display:block;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-box{
+        margin: 50px 0;
+    }
+    
+}
+@media only screen and (max-width:800px) {
+    .banner{
+        width: 500px;
     }
     
 }
@@ -18,7 +86,7 @@
     
 }
 @media only screen and (max-width:653px) {
-    .login{
+    .login-box{
         max-width: 350px;
         height: fit-content;
     }
@@ -26,6 +94,13 @@
         max-width: 200px;
     }
     
+    
+}
+@media only screen and (max-width:534px) {
+    .banner{
+        width: 400px;
+        height: 250px;
+    }
     
 }
 

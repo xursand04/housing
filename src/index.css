@@ -1,6 +1,0 @@
-@import "react-alice-carousel/lib/alice-carousel.css";
-
-
-.alice-carousel__prev-btn-item, .alice-carousel__next-btn {
-    display: none;
-}

@@ -4,39 +4,40 @@ import { ReactComponent as Logo } from "../assets/icons/logo.svg"
 import { useNavigate } from "react-router-dom"
 import SearchTitle from "./searchTitle"
 import { useLocation } from "react-router-dom"
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import ToogleMenu from "./ToogleMenu"
+import { useState } from 'react'
 
 
 
 const Navbar = () => {
     const navigate = useNavigate()
     const location = useLocation()
+    const [showToogleMenu, setShowToogleMenu] = useState(false)
     return(
         <>
             <Box sx={{background:'#0D263B',
             color:'#ffff',
-            height:'40px',
+            height:'64px',
             alignItems:'center',
-            padding:'12px',
+            padding:'20px 130px',
             display:'flex',
-            justifyContent:'space-around',
-            position:'fixed',
-            width:'100%' ,
-            top:'0',
-            left:"0",
-            zIndex:'999',
-            margin:"0"}}>
+            justifyContent:'space-between',
+            width:'100%' ,}}>
                 <Logo />
-                <Box>
-                <NavLink to='/' style={{color:'white',marginLeft:'40px'}}>home</NavLink>
-                <NavLink to='/Properties' style={{color:'white',marginLeft:'40px'}}>Properties</NavLink>
-                <NavLink to='/Contact' style={{color:'white',marginLeft:'40px'}}>Contacts</NavLink>
+                <Box sx={{display:{xs:"none",md:'flex'}}}>
+                <NavLink to='/' style={{color:'white',textDecoration:'none'}}>Home</NavLink>
+                <NavLink to='/Properties' style={{color:'white',marginLeft:'40px',textDecoration:'none'}}>Properties</NavLink>
+                <NavLink to='/Products' style={{color:'white',marginLeft:'40px',textDecoration:'none'}}>Products</NavLink>
                 </Box>
-                <Box>
-                    <Button variant="outlined" sx={{border:'1px solid white'}} onClick={()=>navigate('/Login')}>
+                <Box onClick={()=>setShowToogleMenu(!showToogleMenu)} sx={{display:{xs:'flex',md:'none'} ,cursor:'pointer'}}><MenuOutlinedIcon/></Box>
+                <Box sx={{display:{xs:"none",md:'flex'}}}>
+                    <Button variant="outlined" sx={{border:'1px solid white'}} onClick={()=>navigate('/Login',)}>
                         <Link sx={{color:'white',textDecoration:'none'}} to='/Login'>Sign in</Link>
                     </Button>
                 </Box>
             </Box>
+            { showToogleMenu &&  <ToogleMenu />}
             <Box>
             {location.pathname === '/' && <SearchTitle/> }
             </Box>

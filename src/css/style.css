@@ -41,6 +41,7 @@
     backdrop-filter: blur(15px);
 }
 
+
 @media only screen and (max-width:1400px) {
     .footer-info4, .choose-info4{
         display: none;
